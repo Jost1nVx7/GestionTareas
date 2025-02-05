@@ -4,6 +4,9 @@
 
 package com.mycompany.gestorgrafico;
 
+import com.mycompany.gestorgrafico.Modelo.gestorTareas;
+import com.mycompany.gestorgrafico.Modelo.tarea;
+
 /**
  *
  * @author DELL
@@ -11,6 +14,13 @@ package com.mycompany.gestorgrafico;
 public class GestorGrafico {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        gestorTareas objtareas = new gestorTareas();
+        
+        objtareas.agregarTarea(0, "Programacion", "programe bien el codigo", true);
+        objtareas.listarTareaCompleta();
+        objtareas.listarTareaPendiente();
+        objtareas.marcarComoCompleta(800);
+
     }
 }
