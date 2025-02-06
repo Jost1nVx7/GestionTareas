@@ -1,45 +1,59 @@
 package com.mycompany.gestorgrafico.Controlador;
 
+import com.mycompany.gestorgrafico.Modelo.Tareas;
 import com.mycompany.gestorgrafico.Modelo.gestorTareas;
 import com.mycompany.gestorgrafico.Modelo.tarea;
+import com.mycompany.gestorgrafico.Vista.Pendiente;
 import com.mycompany.gestorgrafico.Vista.Vista;
 import java.util.List;
 
-
-public class controlador{
+public class controlador {
 
     private Vista vista;
-    private gestorTareas gestorTareas;
-
-    ;
+    private gestorTareas gestorTarea;
+    private Tareas tarea;
+    private Pendiente pendiente;
 
     public controlador(Vista vista) {
         this.vista = vista;
-        this.gestorTareas = new gestorTareas();
+        this.gestorTarea = new gestorTareas();
+        this.tarea = new Tareas();
     }
 
     /*public void porcesoGestorTareas(){
         /*si los datos estan correctos pasa al modelo
         caso contrario los devuelve a la vista
      */
-    
+    public void agregarTarea() {
+        try {
 
-        public void agregarTarea(int id, String titulo, String descripcion, boolean tareaCompletada) {
-            gestorTareas.agregarTarea(id, titulo, descripcion, tareaCompletada);
+            String titulo = vista.getTitulo();
+            String descripcion = vista.getDescripcion();
+            if (titulo != null && descripcion != null) {
+                tarea.setTitulo(titulo);
+                tarea.setDescripcion(descripcion);
+                gestorTarea.agregarTarea(tarea);
+
+            } else {
+                vista.Error();
+            }
+        } catch (Error e) {
+
+        }
+    }
+
+    public void listarTarea() {
+        Tareas[] tareas = gestorTarea.listarTareaCompleta();
+        String tareasPendientes="";
+        for ( ) {
+            //convertir el vector en un String
+            tareasPendientes=tareasPendientes+
         }
 
-        public List<tarea> listarTareaPendiente() {
-            return gestorTareas.listarTareaPendiente();
-        }
-
-        public List<tarea> listarTareaCompletada() {
-            return gestorTareas.listarTareaCompleta();
-        }
-
-        public void marcarComoCompleta(int id) {
-            gestorTareas.marcarComoCompleta(id);
-        }
+        pendiente = new Pendiente();
+        pendiente.mostrarPendientes(tareasPendientes);
 
     }
+}
 
 }

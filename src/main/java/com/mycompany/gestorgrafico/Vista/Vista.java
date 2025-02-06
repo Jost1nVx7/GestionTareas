@@ -4,6 +4,8 @@
  */
 package com.mycompany.gestorgrafico.Vista;
 
+import com.mycompany.gestorgrafico.Controlador.controlador;
+
 
 
 
@@ -13,9 +15,23 @@ package com.mycompany.gestorgrafico.Vista;
  * @author DELL
  */
 public class Vista extends javax.swing.JFrame {
+    
+    private controlador controlado;
     public Vista() {
         initComponents();
         
+    }
+    
+    public String getTitulo(){
+    return txtTitulo.getText();
+    }
+    
+     public String getDescripcion(){
+    return txtDescripcion.getText();
+    }
+     
+    public void Error(){
+    txtDescripcion.setText("Error");
     }
 
     /**
@@ -29,10 +45,10 @@ public class Vista extends javax.swing.JFrame {
 
         lblnombre = new javax.swing.JLabel();
         lblcampo1 = new javax.swing.JLabel();
-        txttitulo = new javax.swing.JTextField();
+        txtTitulo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescripcion = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         mbrmenu = new javax.swing.JMenuBar();
@@ -54,11 +70,16 @@ public class Vista extends javax.swing.JFrame {
 
         jLabel1.setText("Descripcion");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtDescripcion.setColumns(20);
+        txtDescripcion.setRows(5);
+        jScrollPane1.setViewportView(txtDescripcion);
 
         jButton1.setText("G U A R D A R");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("L I M P I A R");
 
@@ -125,7 +146,7 @@ public class Vista extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblcampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
-                                .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
                                 .addComponent(jButton1)
@@ -142,7 +163,7 @@ public class Vista extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblcampo1)
-                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -190,6 +211,11 @@ public class Vista extends javax.swing.JFrame {
         objcompleta.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        controlado.agregarTarea();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
     
     
@@ -200,7 +226,6 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblcampo1;
     private javax.swing.JLabel lblnombre;
     private javax.swing.JMenuBar mbrmenu;
@@ -208,6 +233,7 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnicompletas;
     private javax.swing.JMenuItem mnisalida;
     private javax.swing.JMenu mnumenu;
-    private javax.swing.JTextField txttitulo;
+    private javax.swing.JTextArea txtDescripcion;
+    private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

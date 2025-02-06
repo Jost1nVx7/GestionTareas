@@ -1,33 +1,48 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.gestorgrafico.Modelo;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class gestorTareas {
 
-    private final tarea[] tareas;
+    private Tareas[] tareas = new Tareas[5];
+    private Tareas[] tareasAux = new Tareas[5];
     private int contadorTareas;
 
     public gestorTareas() {
-        tareas = new tarea[10];
-        contadorTareas = 0;
+        contadorTareas++;
     }
 
-    public void agregarTarea(int id, String titulo, String descripcion, boolean tareaCompletada) {
-        if (contadorTareas < tareas.length) {
-            tareas[contadorTareas] = new tarea(id, titulo, descripcion, tareaCompletada);
-            System.out.println("Tarea añadida" + id + titulo + descripcion + tareaCompletada);
-            contadorTareas++;
-        } else {
-            System.out.println("No se pueden agregar mas tareas.");
+    public void agregarTarea(Tareas tareas) {
+        for (int i = 0; i < 4; i++) {
+            if (this.tareas[i] != null) {
+                this.tareas[i].setTitulo(tareas.getTitulo());
+                this.tareas[i].setDescripcion(tareas.getDescripcion());
+                this.tareas[i].setId(contadorTareas);
+            }
         }
     }
 
-    public List<tarea> listarTareaPendiente() {
+    public Tareas[] listarTareaPendiente() {
+        tareasAux=null;
+        for (int i = 0; i < 4; i++) {
+            if (!this.tareas[i].getEstadoTarea()) {
+                tareasAux[i] = tareas[i];
+            }
+        }
+        return tareasAux;
+    }
+
+    public Tareas[] listarTareaCompleta() {
+        tareasAux=null;
+        for (int i = 0; i < 4; i++) {
+            if (this.tareas[i].getEstadoTarea()) {
+                tareasAux[i] = tareas[i];
+            }
+        }
+
+        return tareasAux;
+    }
+
+    
+    /*public List<tarea> listarTareaPendiente() {
         List<tarea> tareasPendientes = new ArrayList<>();
         System.out.println("Tareas Pendientes");
         for (int i = 0; i < contadorTareas; i++) {
@@ -64,6 +79,5 @@ public class gestorTareas {
             }
         }
 
-    }
-
+    }*/
 }

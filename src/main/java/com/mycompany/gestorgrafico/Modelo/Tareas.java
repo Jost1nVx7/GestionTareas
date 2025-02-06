@@ -1,19 +1,31 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.mycompany.gestorgrafico.Modelo;
 
-
-public class tarea {
+/**
+ *
+ * @author SO-LAB1-PC27
+ */
+public class Tareas {
+    
     private int id;
     private String titulo;
     private String descripcion;
-    private boolean tareaCompletada;
+    private boolean estadoTarea;
 
-    public tarea(int id, String titulo, String descripcion, boolean tareaCompletada) {
+    public Tareas(int id, String titulo, String descripcion, boolean estadoTarea) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.tareaCompletada = tareaCompletada;
+        this.estadoTarea = estadoTarea;
     }
+
+    public Tareas() {
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -39,14 +51,13 @@ public class tarea {
         this.descripcion = descripcion;
     }
 
-    public boolean isTareaCompletada() {
-        return tareaCompletada;
+    public boolean getEstadoTarea() {
+        return estadoTarea;
     }
 
-    public void setTareaCompletada(boolean tareaCompletada) {
-        this.tareaCompletada = tareaCompletada;
+    public void setEstadoTarea(boolean estadoTarea) {
+        this.estadoTarea = estadoTarea;
     }
-    
     
     
     
