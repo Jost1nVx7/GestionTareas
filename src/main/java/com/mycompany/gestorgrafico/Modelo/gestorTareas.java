@@ -4,6 +4,9 @@
  */
 package com.mycompany.gestorgrafico.Modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class gestorTareas {
 
     private final tarea[] tareas;
@@ -24,25 +27,29 @@ public class gestorTareas {
         }
     }
 
-    public void listarTareaPendiente() {
+    public List<tarea> listarTareaPendiente() {
+        List<tarea> tareasPendientes = new ArrayList<>();
         System.out.println("Tareas Pendientes");
         for (int i = 0; i < contadorTareas; i++) {
-            if (tareas[i].isTareaCompletada()) {
+            if (!tareas[i].isTareaCompletada()) {
                 System.out.println(i + "; " + tareas[i].getDescripcion());
-
+                tareasPendientes.add(tareas[i]);
             }
-
         }
+        return tareasPendientes;
     }
 
-    public void listarTareaCompleta() {
+    public List<tarea> listarTareaCompleta() {
+        List<tarea> tareasCompletadas = new ArrayList<>();
         System.out.println("Tareas Completadas");
         for (int i = 0; i < contadorTareas; i++) {
             if (tareas[i].isTareaCompletada()) {
+                System.out.println(i + "; " + tareas[i].getDescripcion());
+                tareasCompletadas.add(tareas[i]);
 
             }
         }
-
+        return tareasCompletadas;
     }
 
     public void marcarComoCompleta(int id) {
