@@ -1,16 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.gestorgrafico;
 
-/**
- *
- * @author DELL
- */
+import com.mycompany.gestorgrafico.Vista.Vista;
+
+
 public class GestorGrafico {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        //Visualizar la interfas grafica
+        Vista objinterfas = new Vista();
+        objinterfas.setVisible(true);
+
     }
 }
