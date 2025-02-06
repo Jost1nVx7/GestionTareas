@@ -5,7 +5,12 @@ import com.mycompany.gestorgrafico.Modelo.gestorTareas;
 import com.mycompany.gestorgrafico.Vista.Vista;
 
 
-public class controlador {
+public class controlador{
+    
+      
+    
+    
+    
     private Vista vista;
     private gestorTareas modelo;
 
@@ -23,4 +28,3 @@ public class controlador {
     
     
 }
-

@@ -4,17 +4,18 @@
  */
 package com.mycompany.gestorgrafico.Vista;
 
+
+
+
+
 /**
  *
  * @author DELL
  */
 public class Vista extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Intefas
-     */
     public Vista() {
         initComponents();
+        
     }
 
     /**
@@ -26,50 +27,187 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        lblnombre = new javax.swing.JLabel();
+        lblcampo1 = new javax.swing.JLabel();
+        txttitulo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        mbrmenu = new javax.swing.JMenuBar();
+        mnumenu = new javax.swing.JMenu();
+        mniagregar = new javax.swing.JMenuItem();
+        mnicompletas = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        mnisalida = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu4.setText("Edit");
-        jMenuBar2.add(jMenu4);
+        lblnombre.setBackground(new java.awt.Color(102, 0, 102));
+        lblnombre.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblnombre.setForeground(new java.awt.Color(0, 153, 102));
+        lblnombre.setText("Gestor Grafico");
+        lblnombre.setToolTipText("");
 
-        jMenu3.setText("File");
-        jMenuBar2.add(jMenu3);
+        lblcampo1.setText("Titulo");
 
-        setJMenuBar(jMenuBar2);
+        jLabel1.setText("Descripcion");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jButton1.setText("G U A R D A R");
+
+        jButton2.setText("L I M P I A R");
+
+        mnumenu.setText("Administracion De Tareas");
+        mnumenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnumenuActionPerformed(evt);
+            }
+        });
+
+        mniagregar.setText("Agregar Tareas");
+        mniagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniagregarActionPerformed(evt);
+            }
+        });
+        mnumenu.add(mniagregar);
+
+        mnicompletas.setText("Tareas Pendientes");
+        mnicompletas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnicompletasActionPerformed(evt);
+            }
+        });
+        mnumenu.add(mnicompletas);
+
+        jMenuItem2.setText("Tareas Completas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        mnumenu.add(jMenuItem2);
+
+        mnisalida.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        mnisalida.setText("Cerrar Sistema");
+        mnisalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnisalidaActionPerformed(evt);
+            }
+        });
+        mnumenu.add(mnisalida);
+
+        mbrmenu.add(mnumenu);
+
+        setJMenuBar(mbrmenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(lblnombre))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblcampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)
+                                .addGap(33, 33, 33)))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblnombre)
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblcampo1)
+                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(102, 102, 102))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mniagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniagregarActionPerformed
+        // Ventana para agregar una tarea
+        
+        Agregar objagregar = new Agregar();
+        objagregar.setVisible(true);
+
+    }//GEN-LAST:event_mniagregarActionPerformed
+
+    private void mnicompletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnicompletasActionPerformed
+        // Ventana para mostrar las tareas pendientes
+        
+        Pendiente objpendiente = new Pendiente();
+        objpendiente.setVisible(true);
+    }//GEN-LAST:event_mnicompletasActionPerformed
+
+    private void mnumenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnumenuActionPerformed
+        // TODO add your handling code here:
+        
+
+    }//GEN-LAST:event_mnumenuActionPerformed
+
+    private void mnisalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnisalidaActionPerformed
+        // TODO add your handling code here:
+                System.exit(0);
+    }//GEN-LAST:event_mnisalidaActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // Ventana para mostrar las tareas completas
+        
+        Completa objcompleta = new Completa();
+        objcompleta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblcampo1;
+    private javax.swing.JLabel lblnombre;
+    private javax.swing.JMenuBar mbrmenu;
+    private javax.swing.JMenuItem mniagregar;
+    private javax.swing.JMenuItem mnicompletas;
+    private javax.swing.JMenuItem mnisalida;
+    private javax.swing.JMenu mnumenu;
+    private javax.swing.JTextField txttitulo;
     // End of variables declaration//GEN-END:variables
 }
